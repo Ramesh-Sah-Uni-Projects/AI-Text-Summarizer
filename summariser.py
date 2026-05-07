@@ -1,6 +1,5 @@
 import ollama
 
-
 class Summariser:
     """
     Calls local Ollama phi3:mini model.
