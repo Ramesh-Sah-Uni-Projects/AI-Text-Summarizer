@@ -228,7 +228,7 @@ class UIApp(tk.Tk):
         bot.pack_propagate(False)
 
         # WORD COUNT BUTTONS — 50 / 75 / 100 words
-        # Click one of these BEFORE clicking Summarise to set the length
+        # Click one of these BEFORE clicking Summarise to set the length of words count
         wr = tk.Frame(bot, bg=PNL_HD)
         wr.pack(fill="x", padx=12, pady=(10, 5))
         tk.Label(wr, text="Summary\nlength:",
@@ -248,7 +248,7 @@ class UIApp(tk.Tk):
         fr.pack(fill="x", padx=12, pady=(0, 10))
 
         # INSTRUCTION TEXT PANEL — type a follow-up instruction here
-        # Examples: "bullet points" / "simpler language" / "one sentence"
+       
         self._FP = "Follow-up — e.g.  bullet points  /  simpler  /  one sentence"
         self.follow = tk.Entry(
             fr,
