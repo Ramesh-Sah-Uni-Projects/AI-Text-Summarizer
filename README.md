@@ -4,7 +4,7 @@ Test summarization chatbot is AI based chatbot. It summarize the large volume of
 ---
 
 ## Model Used
-phi3:mini — lightweight model, works on 4GB RAM laptops
+phi3:mini — lightweight model.
 
 ---
 
