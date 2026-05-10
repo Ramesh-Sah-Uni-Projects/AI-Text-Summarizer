@@ -66,3 +66,7 @@ Or double-click run.bat
 | test_all.py | Unit tests |
 | environment.yml | Conda environment |
 | run.bat | Windows quick launch |
+
+## **GUI of App**
+<img width="1905" height="982" alt="Screenshot (59)" src="https://github.com/user-attachments/assets/14a18bba-2248-4e7a-8d35-053a35a55b92" />
+
