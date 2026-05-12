@@ -11,7 +11,7 @@ phi3:mini — lightweight model.
 ## Run in VS Code
 
 1. Open VS Code
-2. File > Open Folder > select FinalProject folder
+2. File > Open Folder > select AI_TEXT_Summarizer folder
 3. Press Ctrl+Shift+P > Python: Select Interpreter
 4. Choose: Python 3.12 ('chatbot': conda)
 5. Press Ctrl+` to open terminal
