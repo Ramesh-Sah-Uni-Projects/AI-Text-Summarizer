@@ -1,4 +1,29 @@
+"""
+═══════════════════════════════════════════════════════════════════════
+                      TEXT SUMMARIZER  —  UI MODULE
+═══════════════════════════════════════════════════════════════════════
+This is the user interface (UI) file for a desktop Text Summarizer app.
+It is built with Python's Tkinter library and gives users a clean,
+green-themed window to interact with an AI summarizer that runs locally
+on their computer (using Ollama with the phi3:mini model — fully offline).
 
+MAIN FEATURES THE UI PROVIDES
+-----------------------------
+  • A LEFT PANEL to paste text or upload .txt / .docx files
+  • A RIGHT PANEL that displays the AI-generated summary
+  • Buttons to choose summary length — 50, 75, or 100 words
+  • A FOLLOW-UP BOX to refine the summary
+        (e.g. "make it simpler" or "use bullet points")
+  • COPY, CLEAR, and UPLOAD buttons for convenience
+  • A live WORD COUNTER and SESSION TRACKER
+  • THREADED STREAMING so the summary appears word-by-word
+    without freezing the app
+
+This file connects three helper modules:
+  • Summariser  → handles AI calls
+  • FileReader  → reads uploaded files
+  • ChatBot     → stores conversation history
+"""
 
 import tkinter as tk
 from tkinter import filedialog, scrolledtext, messagebox
