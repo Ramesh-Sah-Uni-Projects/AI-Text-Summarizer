@@ -8,7 +8,7 @@ get_history() — Returns the full list of all messages exchanged so far. Useful
 clear() — Wipes the history clean. Used when the user wants to start a fresh session.
 last_summary() — Looks backwards through the history to find the most recent AI response and returns it. Handy for grabbing the latest summary without scrolling through everything.
 count() — Returns how many messages are stored in total. The UI uses this (divided by 2) to show "X summaries this session" in the header.
-
+"""
 
 class ChatBot:
     """Stores conversation history for the session."""
@@ -33,3 +33,6 @@ class ChatBot:
 
     def count(self) -> int:
         return len(self.history)
+
+
+ 
