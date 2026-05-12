@@ -1,13 +1,40 @@
 """
-This ChatBot class is a simple memory store that keeps track of the conversation between the user and the AI during a session. Think of it as a notebook that records every message exchanged.
+═══════════════════════════════════════════════════════════════════════
+                      CHATBOT  —  CONVERSATION MEMORY
+═══════════════════════════════════════════════════════════════════════
 
-What each method does:
-__init__ — Creates an empty list called history when the chatbot starts. This is where all messages will be stored.
-add_message(role, content) — Adds a new message to the history. The role is either "user" or "assistant" (the AI), and content is the actual text of the message.
-get_history() — Returns the full list of all messages exchanged so far. Useful if you want to send the whole conversation back to the AI for context.
-clear() — Wipes the history clean. Used when the user wants to start a fresh session.
-last_summary() — Looks backwards through the history to find the most recent AI response and returns it. Handy for grabbing the latest summary without scrolling through everything.
-count() — Returns how many messages are stored in total. The UI uses this (divided by 2) to show "X summaries this session" in the header.
+WHAT THIS CODE DOES
+-------------------
+This class stores the conversation history between the user and the AI
+for the current session. It acts as the app's short-term memory — every
+piece of text the user submits and every summary the AI generates is
+saved here in order.
+
+HOW IT WORKS
+------------
+The history is kept as a simple list of dictionaries, where each entry
+has a ROLE ("user" or "assistant") and the CONTENT of the message.
+
+METHODS PROVIDED
+----------------
+  • __init__()         → creates an empty history list when the app starts
+  • add_message()      → adds a new message (user input or AI reply)
+  • get_history()      → returns the full conversation so far
+  • clear()            → wipes the history (e.g. to start a fresh session)
+  • last_summary()     → finds and returns the most recent AI summary
+  • count()            → returns how many messages are stored in total
+                         (used by the UI to show the session counter,
+                         e.g. "3 summaries this session")
+
+WHY IT MATTERS
+--------------
+Without this class, the app would forget everything after each summary.
+By storing the history, the app can:
+  • Track how many summaries the user has made
+  • Retrieve the last summary for follow-up edits
+  • Support future features like exporting the full chat log
+
+═══════════════════════════════════════════════════════════════════════
 """
 
 class ChatBot:
