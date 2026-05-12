@@ -1,7 +1,86 @@
 """
-Unit Tests - Text Summarization Chatbot
-Run: python test_all.py
+═══════════════════════════════════════════════════════════════════════
+                  UNIT TESTS  —  TEXT SUMMARIZER
+═══════════════════════════════════════════════════════════════════════
+
+WHAT THIS CODE DOES
+-------------------
+This file contains AUTOMATED UNIT TESTS for the three core modules of
+the Text Summarizer app:
+
+  • Summariser   → the AI engine connector
+  • ChatBot      → the conversation history store
+  • FileReader   → the file-loading helper
+
+The tests run WITHOUT needing Ollama to be open — network calls are
+faked using unittest.mock.patch — so they finish in seconds and prove
+the code's logic works even when the AI is offline.
+
+HOW TO RUN
+----------
+    python test_all.py
+
+The output shows each test name and whether it PASSED or FAILED, plus
+a summary at the bottom.
+
+
+WHAT EACH TEST CLASS CHECKS
+---------------------------
+
+  ── TestSummariser ──
+  Verifies the AI-connector module behaves correctly:
+      • test_empty / test_whitespace
+            Returns an ERROR message when no text is given.
+      • test_wc_50 / test_wc_100 / test_wc_default
+            The word-count extractor picks up "50", "100", or falls
+            back to "75" when no number is mentioned.
+      • test_fmt_bullet / test_fmt_simple / test_fmt_sentence
+            The format detector picks the right style based on
+            keywords in the user's instruction.
+      • test_offline / test_stream_offline
+            When Ollama is unreachable, the module returns a clean
+            error message instead of crashing — for both normal and
+            streaming modes.
+
+  ── TestChatBot ──
+  Verifies the conversation memory works correctly:
+      • test_add        → a new message increases the count
+      • test_clear      → clear() empties the history
+      • test_last_summary → returns the most recent AI reply
+      • test_empty_last → returns an empty string if no summary yet
+      • test_count      → counts multiple messages correctly
+
+  ── TestFileReader ──
+  Verifies file loading works correctly:
+      • test_read_txt   → reads a real .txt file from disk
+      • test_missing    → returns ERROR if the file does not exist
+      • test_bad_ext    → returns ERROR for unsupported types (.pdf)
+
+
+KEY TECHNIQUES USED
+-------------------
+  • unittest          → Python's built-in testing framework
+  • setUp()           → creates a fresh object before each test so
+                        tests do not interfere with each other
+  • patch()           → temporarily replaces ollama.chat with a fake
+                        that raises an exception, letting us test the
+                        offline / error path safely
+  • tempfile          → creates real temporary files on disk so the
+                        FileReader can be tested with actual files,
+                        which are deleted afterwards with os.unlink
+
+
+WHY IT MATTERS
+--------------
+These tests act as a SAFETY NET. If anyone changes the code later
+(e.g. tweaks the Summariser prompt or adds a feature to ChatBot),
+running this file instantly shows whether anything important has
+broken — without having to manually click through the app.
+
+═══════════════════════════════════════════════════════════════════════
 """
+
+
 import unittest
 from unittest.mock import patch
 import tempfile, os
