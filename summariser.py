@@ -100,6 +100,7 @@ locally, privately, and instantly through streaming.
 
 import ollama
 
+
 class Summariser:
     """
     Calls local Ollama phi3:mini model.
@@ -249,4 +250,6 @@ class Summariser:
                 "  2.  Ollama app open\n"
                 "  3.  ollama pull phi3:mini\n\n"
                 f"Error: {e}"
+            )
+            f"Error: {e}"
             )
