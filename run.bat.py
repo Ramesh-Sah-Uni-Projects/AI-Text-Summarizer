@@ -58,12 +58,33 @@
 """
 
 @echo off
-title Text Summarizer
+title AI Text Summarizer
 echo ==========================================
-echo  Text Summarization Chatbot
-echo  Make sure Ollama is open first!
+echo   AI Text Summarizer
+echo   Make sure Ollama is open first!
 echo ==========================================
 echo.
+echo  [1] Launch GUI App
+echo  [2] Launch Terminal Chatbot
+echo  [3] Run Tests
+echo.
+set /p choice="Enter 1, 2 or 3: "
+
 call conda activate chatbot
 cd /d "%~dp0"
-python app.py
+
+if "%choice%"=="1" (
+    echo Launching GUI...
+    python app.py
+) else if "%choice%"=="2" (
+    echo Launching Terminal Chatbot...
+    python run_chatbot.py
+) else if "%choice%"=="3" (
+    echo Running Tests...
+    python test_all.py
+) else (
+    echo Invalid choice. Launching GUI by default...
+    python app.py
+)
+
+
