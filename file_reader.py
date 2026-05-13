@@ -95,3 +95,4 @@ class FileReader:
             )
         except Exception as e:
             return f"ERROR: {e}"
+
