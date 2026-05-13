@@ -25,6 +25,9 @@ This file connects three helper modules:
   • ChatBot     → stores conversation history
 """
 
+
+  
+
 import tkinter as tk
 from tkinter import filedialog, scrolledtext, messagebox
 import threading
@@ -92,8 +95,8 @@ class UIApp(tk.Tk):
         # Body fills the remaining middle space with expand=True.
         # This ensures buttons are never hidden behind the body.
         self._build_header()
-        self._build_statusbar()   # ← must be BEFORE body
-        self._build_body()        # ← fills remaining space last
+        self._build_statusbar()   
+        self._build_body()        
 
     # ══════════════════════════════════════════════════════════════
     # HEADER
@@ -253,7 +256,7 @@ class UIApp(tk.Tk):
         bot.pack_propagate(False)
 
         # WORD COUNT BUTTONS — 50 / 75 / 100 words
-        # Click one of these BEFORE clicking Summarise to set the length of words count
+        # Click one of these BEFORE clicking Summarise to set the length
         wr = tk.Frame(bot, bg=PNL_HD)
         wr.pack(fill="x", padx=12, pady=(10, 5))
         tk.Label(wr, text="Summary\nlength:",
@@ -273,7 +276,7 @@ class UIApp(tk.Tk):
         fr.pack(fill="x", padx=12, pady=(0, 10))
 
         # INSTRUCTION TEXT PANEL — type a follow-up instruction here
-       
+        # Examples: "bullet points" / "simpler language" / "one sentence"
         self._FP = "Follow-up — e.g.  bullet points  /  simpler  /  one sentence"
         self.follow = tk.Entry(
             fr,
@@ -512,3 +515,4 @@ class UIApp(tk.Tk):
 if __name__ == "__main__":
     app = UIApp()
     app.mainloop()
+
