@@ -1,1 +1,51 @@
 
+
+*Participant Number: 2418914*
+*Name: Bibatshu Acharya*
+
+### System Usability Scale
+
+*Scale: 1 = strongly disagree, 5 = strongly agree*
+
+| #  | Statement                                                                       | Rating |
+|----|---------------------------------------------------------------------------------|:------:|
+| 1  | I think that I would like to use this chatbot frequently.                       | 3 |
+| 2  | I found interacting with the chatbot unnecessarily complex.                     | 1 |
+| 3  | I thought the chatbot was easy to use.                                          | 5 |
+| 4  | I think that I would need support to be able to use this chatbot.               | 3 |
+| 5  | I found the various functions in this chatbot were well integrated.             | 4 |
+| 6  | I thought there was too much inconsistency in this chatbot.                     | 2 |
+| 7  | I imagine that most people would learn to use this chatbot quickly.             | 4 |
+| 8  | I found the chatbot cumbersome to use.                                          | 3 |
+| 9  | I felt confident using the chatbot.                                             | 4 |
+| 10 | I needed to learn a lot of things before I could get going with this chatbot.   | 2 |
+| 11 | I would imagine that most people would learn to use this chatbot very quickly.  | 4 |
+
+**Computed SUS score: 72.5 / 100** — above average, in the *"good"* range.
+The score is held back mainly by response time and the one-off Ollama
+installation step rather than the interface itself.
+
+### Personality of the chatbot
+
+> Focused · Minimalist · Calm · Professional · Quiet
+
+### How it felt to interact with the chatbot
+
+> Patient (waiting for the model) · In control · Private ·
+> Reassured (knowing it was offline) · Slightly impatient on long inputs
+
+### Additional comments and feedback
+
+The GUI itself is genuinely easy to use — there are only three controls a
+first-time user really needs (paste text, pick a word count, click
+**Summarise**), and the streaming output gives clear feedback that something
+is happening. The colour palette is consistent and the status bar showing
+`Ollama · phi3:mini · Local · Offline` helps reassure the user about what is
+going on behind the scenes.
+
+The main usability weakness is **response time**. On a CPU-only laptop, a
+75-word summary takes around 56–58 seconds, which is long enough that the
+user starts to wonder whether the app has frozen, even with streaming
+output. A visible token counter or a progress estimate would help. The lack
+of a **Stop button** is the second clear issue — once *Summarise* is
+clicked, the only way out is to wait or kill the app.
