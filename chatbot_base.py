@@ -1,10 +1,11 @@
-"""
-Base Chatbot class
-Create a new file for your chatbot that inherits from this class
-To do this you need to include the following line at the top of your new file:
-
-from chatbot_base import ChatbotBase
-"""
+# chatbot_base.py defines ChatbotBase, an abstract base class that provides
+# the common scaffolding for building chatbots — a constructor with a
+# configurable name, greeting and farewell messages, terminal input handling,
+# and a simple interaction loop. Subclasses inherit from it and implement the
+# two abstract methods, process_input() and generate_response(), to define how
+# the bot understands user input and what it replies with. This keeps
+# boilerplate in one place so each new chatbot only needs to focus on its
+# unique logic.
 
 
 class ChatbotBase:
